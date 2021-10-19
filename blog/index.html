@@ -80,16 +80,20 @@
 					</p>
 
 					<p>
-						<br />Traditional application server architectures contain a central server that listens on port :80 for incoming requests,
-						and processes them on the same machine, whether that be an on-premises server or a remote hosted server, such as AWS EC2
-						instance, Google Compute Engine, or IBM Cloud Virtual Server. When that server has many connections at once it can become
-						overloaded with requests, so when you anticipate growing traffic you must provision larger and larger machines to handle these
-						tasks, so you upgrade your server's capacity to the next price tier.
+						<br />Traditional application server architectures contain a central server that loiter around listening for incoming
+						requests, processing them whenever they come in, and burning your money while they aren't. This server can be an on-premises
+						or a remote hosted one, such as AWS EC2 instance, Google Compute Engine, or IBM Cloud Virtual Server.
+					</p>
+					<p>
+						<br />When that server has the perfect amount of connections that you guessed it would have, great! This is, however,
+						extremely unlikely... A good swell of business overwhelms your poor little server one day and he crashes, losing a lot of
+						potential customers! You will anticipate this growing traffic next time, we're ready now! You provision larger and larger
+						machines to handle these tasks, so upgrading your server's capacity - and cost.
 					</p>
 					<p>
 						When server traffic does not grow as expected, you pay for the anticipated space and that server capacity is wasted as the
 						machine sits idle. When you decide to downgrade a few months later after paying for wasted capacity, you get hit with a spike
-						of traffic (yay!) but are unable to handle it (on no!) causing downtime and loss of both users and revenue.
+						of traffic again (yay!) but are unable to handle it...yet again (on no!) causing downtime and loss of both users and revenue.
 					</p>
 					<p><br />How can we get around this seemingly impossible task of perfectly provisioning the correct server size?</p>
 					<p><br />You guessed it! Go Serverless!</p>
