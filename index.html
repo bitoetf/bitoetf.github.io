@@ -21,6 +21,50 @@
 				<li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
 			</div>
 		</nav>
+		<canvas id="gameCanvas" width="screen.width/4" height="screen.height/4"></canvas>
+		<img id="coinPos1" width="10" height="10" src="./coinPos1.jpg" alt="coinPos1" />
+		<img id="coinPos2" width="10" height="10" src="./coinPos2.jpg" alt="coinPos2" />
+		<img id="coinPos3" width="10" height="10" src="./coinPos3.jpg" alt="coinPos3" />
+		<img id="coinPos4" width="10" height="10" src="./coinPos4.jpg" alt="coinPos4" />
+		<img id="coinPos5" width="10" height="10" src="./coinPos5.jpg" alt="coinPos5" />
+		<img id="coinPos6" width="10" height="10" src="./coinPos6.jpg" alt="coinPos6" />
+		<img id="coinPos7" width="10" height="10" src="./coinPos7.jpg" alt="coinPos7" />
+		<img id="coinPos8" width="10" height="10" src="./coinPos8.jpg" alt="coinPos8" />
+		<img id="coinPos9" width="10" height="10" src="./coinPos9.jpg" alt="coinPos9" />
+		<script>
+			setInterval(update, 1000 / 30);
+			let TIME = 0;
+			let choice = 'coinPos1';
+
+			// get canvas properties
+			var canvas = document.getElementById('gameCanvas');
+			var context = canvas.getContext('2d');
+			function update() {
+				context.canvas.width = window.innerWidth / 4;
+				context.canvas.height = window.innerHeight / 4;
+				// draw space
+				context.fillStyle = 'white';
+				context.fillRect(0, 0, canvas.width, canvas.height);
+				if (TIME == 4) {
+					if (choice == 'coinPos1') choice = 'coinPos2';
+					else if (choice == 'coinPos2') choice = 'coinPos3';
+					else if (choice == 'coinPos3') choice = 'coinPos4';
+					else if (choice == 'coinPos4') choice = 'coinPos5';
+					else if (choice == 'coinPos5') choice = 'coinPos6';
+					else if (choice == 'coinPos6') choice = 'coinPos7';
+					else if (choice == 'coinPos7') choice = 'coinPos8';
+					else if (choice == 'coinPos8') choice = 'coinPos9';
+					else if (choice == 'coinPos9') choice = 'coinPos1';
+					TIME = 0;
+				}
+				TIME++;
+				context.fillStyle = 'black';
+				context.font = '50px san-serif';
+
+				var img = document.getElementById(choice);
+				context.drawImage(img, context.canvas.width / 2, context.canvas.height / 2);
+			}
+		</script>
 		<!-- Masthead-->
 		<header class="masthead">
 			<div class="container px-4 px-lg-5 h-100">
